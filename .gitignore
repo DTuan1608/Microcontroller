@@ -1,0 +1,33 @@
+# ESP-IDF build output
+/build/
+/sdkconfig
+/sdkconfig.old
+/project_description.json
+
+# NVS flash files
+*.bin
+*.elf
+*.map
+
+# CMake generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# VS Code settings (nếu dùng VSCode)
+.vscode/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# ESP-IDF environment files
+.env/
+*.export.*
+
+# Git files
+*.orig
+
+# Logs
+*.log
