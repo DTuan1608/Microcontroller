@@ -1,0 +1,18 @@
+[1/10] Performing build step for 'bootloader'
+[1/1] C:\WINDOWS\system32\cmd.exe /C "cd /D D:\face_detect\build\bootloader\esp-idf\esptool_py && D:\Espressif\python_env\idf5.4_py3.11_env\Scripts\python.exe D:/Espressif/frameworks/esp-idf-v5.4.1/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 D:/face_detect/build/bootloader/bootloader.bin"
+Bootloader binary size 0x6580 bytes. 0xa80 bytes (9%) free.
+[2/10] No install step for 'bootloader'
+[3/10] Completed 'bootloader'
+[4/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/__/src/fr_flash.c.obj
+[5/10] Linking C static library esp-idf\main\libmain.a
+[6/10] Generating ld/sections.ld
+[7/10] Building C object CMakeFiles/face_detect.elf.dir/project_elf_src_esp32.c.obj
+[8/10] Linking CXX executable face_detect.elf
+[9/10] Generating binary image from built executable
+esptool.py v4.8.1
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated D:/face_detect/build/face_detect.bin
+[10/10] C:\WINDOWS\system32\cmd.exe /C "cd /D D:\face_detect\build\esp-idf\esptool_py && D:\Espressif\python_env\idf5.4_py3.11_env\Scripts\python.exe D:/Espressif/frameworks/esp-idf-v5.4.1/components/partition_table/check_sizes.py --offset 0x8000 partition --type app D:/face_detect/build/partition_table/partition-table.bin D:/face_detect/build/face_detect.bin"
+face_detect.bin binary size 0x44d30 bytes. Smallest app partition is 0x100000 bytes. 0xbb2d0 bytes (73%) free.

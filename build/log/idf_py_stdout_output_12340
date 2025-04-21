@@ -1,0 +1,89 @@
+[1/10] Performing build step for 'bootloader'
+[1/1] C:\WINDOWS\system32\cmd.exe /C "cd /D D:\face_detect\build\bootloader\esp-idf\esptool_py && D:\Espressif\python_env\idf5.4_py3.11_env\Scripts\python.exe D:/Espressif/frameworks/esp-idf-v5.4.1/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 D:/face_detect/build/bootloader/bootloader.bin"
+Bootloader binary size 0x6580 bytes. 0xa80 bytes (9%) free.
+[2/10] No install step for 'bootloader'
+[3/10] Completed 'bootloader'
+[4/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+In file included from D:/face_detect/main/main.c:5:
+D:/face_detect/include/fd_forward.h:26:8: warning: extra tokens at end of #endif directive [-Wendif-labels]
+   26 | #endif FD_FOWARD_H
+      |        ^~~~~~~~~~~
+[5/10] Linking C static library esp-idf\main\libmain.a
+[6/10] Generating ld/sections.ld
+[7/10] Linking CXX executable face_detect.elf
+[8/10] Generating binary image from built executable
+esptool.py v4.8.1
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated D:/face_detect/build/face_detect.bin
+[9/10] C:\WINDOWS\system32\cmd.exe /C "cd /D D:\face_detect\build\esp-idf\esptool_py && D:\Espressif\python_env\idf5.4_py3.11_env\Scripts\python.exe D:/Espressif/frameworks/esp-idf-v5.4.1/components/partition_table/check_sizes.py --offset 0x8000 partition --type app D:/face_detect/build/partition_table/partition-table.bin D:/face_detect/build/face_detect.bin"
+face_detect.bin binary size 0xdaf50 bytes. Smallest app partition is 0x100000 bytes. 0x250b0 bytes (14%) free.
+[9/10] C:\WINDOWS\system32\cmd.exe /C "cd /D D:\Espressif\frameworks\esp-idf-v5.4.1\components\esptool_py && D:\Espressif\tools\cmake\3.30.2\bin\cmake.exe -D IDF_PATH=D:/Espressif/frameworks/esp-idf-v5.4.1 -D SERIAL_TOOL=D:/Espressif/python_env/idf5.4_py3.11_env/Scripts/python.exe;;D:/Espressif/frameworks/esp-idf-v5.4.1/components/esptool_py/esptool/esptool.py;--chip;esp32 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D WORKING_DIRECTORY=D:/face_detect/build -P D:/Espressif/frameworks/esp-idf-v5.4.1/components/esptool_py/run_serial_tool.cmake"
+esptool.py --chip esp32 -p COM3 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 face_detect.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.8.1
+Serial port COM3
+Connecting....
+Chip is ESP32-D0WD-V3 (revision v3.1)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: 3c:8a:1f:09:fc:6c
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x000eafff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 25984 bytes to 16384...
+Writing at 0x00001000... (100 %)
+Wrote 25984 bytes (16384 compressed) at 0x00001000 in 0.7 seconds (effective 317.1 kbit/s)...
+Hash of data verified.
+Compressed 896848 bytes to 559554...
+Writing at 0x00010000... (2 %)
+Writing at 0x0001cd3f... (5 %)
+Writing at 0x00026366... (8 %)
+Writing at 0x0002f370... (11 %)
+Writing at 0x00038617... (14 %)
+Writing at 0x0003e012... (17 %)
+Writing at 0x00043e09... (20 %)
+Writing at 0x00049a21... (22 %)
+Writing at 0x0005025e... (25 %)
+Writing at 0x00056ea7... (28 %)
+Writing at 0x0005ce46... (31 %)
+Writing at 0x00062a9e... (34 %)
+Writing at 0x00068a79... (37 %)
+Writing at 0x0006e6e4... (40 %)
+Writing at 0x000745d6... (42 %)
+Writing at 0x00079795... (45 %)
+Writing at 0x0007ee56... (48 %)
+Writing at 0x0008464c... (51 %)
+Writing at 0x000899f8... (54 %)
+Writing at 0x0008edce... (57 %)
+Writing at 0x000945cf... (60 %)
+Writing at 0x0009a5b4... (62 %)
+Writing at 0x0009fed9... (65 %)
+Writing at 0x000a5b31... (68 %)
+Writing at 0x000ab8cb... (71 %)
+Writing at 0x000b1070... (74 %)
+Writing at 0x000b6e37... (77 %)
+Writing at 0x000bcde7... (80 %)
+Writing at 0x000c2b0e... (82 %)
+Writing at 0x000c84a2... (85 %)
+Writing at 0x000d2608... (88 %)
+Writing at 0x000d8ada... (91 %)
+Writing at 0x000deb2c... (94 %)
+Writing at 0x000e4a41... (97 %)
+Writing at 0x000e9eb2... (100 %)
+Wrote 896848 bytes (559554 compressed) at 0x00010000 in 12.7 seconds (effective 562.8 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.0 seconds (effective 723.8 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

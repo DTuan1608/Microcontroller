@@ -1,0 +1,75 @@
+[1/5] C:\WINDOWS\system32\cmd.exe /C "cd /D D:\face_detect\build\esp-idf\esptool_py && D:\Espressif\python_env\idf5.4_py3.11_env\Scripts\python.exe D:/Espressif/frameworks/esp-idf-v5.4.1/components/partition_table/check_sizes.py --offset 0x8000 partition --type app D:/face_detect/build/partition_table/partition-table.bin D:/face_detect/build/face_detect.bin"
+face_detect.bin binary size 0xdaf60 bytes. Smallest app partition is 0x100000 bytes. 0x250a0 bytes (14%) free.
+[2/5] Performing build step for 'bootloader'
+[1/1] C:\WINDOWS\system32\cmd.exe /C "cd /D D:\face_detect\build\bootloader\esp-idf\esptool_py && D:\Espressif\python_env\idf5.4_py3.11_env\Scripts\python.exe D:/Espressif/frameworks/esp-idf-v5.4.1/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 D:/face_detect/build/bootloader/bootloader.bin"
+Bootloader binary size 0x6580 bytes. 0xa80 bytes (9%) free.
+[3/5] No install step for 'bootloader'
+[4/5] Completed 'bootloader'
+[4/5] C:\WINDOWS\system32\cmd.exe /C "cd /D D:\Espressif\frameworks\esp-idf-v5.4.1\components\esptool_py && D:\Espressif\tools\cmake\3.30.2\bin\cmake.exe -D IDF_PATH=D:/Espressif/frameworks/esp-idf-v5.4.1 -D SERIAL_TOOL=D:/Espressif/python_env/idf5.4_py3.11_env/Scripts/python.exe;;D:/Espressif/frameworks/esp-idf-v5.4.1/components/esptool_py/esptool/esptool.py;--chip;esp32 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D WORKING_DIRECTORY=D:/face_detect/build -P D:/Espressif/frameworks/esp-idf-v5.4.1/components/esptool_py/run_serial_tool.cmake"
+esptool.py --chip esp32 -p COM3 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 face_detect.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.8.1
+Serial port COM3
+Connecting......
+Chip is ESP32-D0WD-V3 (revision v3.1)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: 3c:8a:1f:09:fc:6c
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x000eafff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 25984 bytes to 16384...
+Writing at 0x00001000... (100 %)
+Wrote 25984 bytes (16384 compressed) at 0x00001000 in 0.7 seconds (effective 318.3 kbit/s)...
+Hash of data verified.
+Compressed 896864 bytes to 559550...
+Writing at 0x00010000... (2 %)
+Writing at 0x0001cd4e... (5 %)
+Writing at 0x00026374... (8 %)
+Writing at 0x0002f370... (11 %)
+Writing at 0x0003860d... (14 %)
+Writing at 0x0003e00f... (17 %)
+Writing at 0x00043df5... (20 %)
+Writing at 0x00049a19... (22 %)
+Writing at 0x0005026b... (25 %)
+Writing at 0x00056eb2... (28 %)
+Writing at 0x0005ce5c... (31 %)
+Writing at 0x00062ab4... (34 %)
+Writing at 0x00068aa1... (37 %)
+Writing at 0x0006e701... (40 %)
+Writing at 0x000745ea... (42 %)
+Writing at 0x000797bb... (45 %)
+Writing at 0x0007ee7e... (48 %)
+Writing at 0x00084661... (51 %)
+Writing at 0x00089a12... (54 %)
+Writing at 0x0008edf2... (57 %)
+Writing at 0x000945ee... (60 %)
+Writing at 0x0009a5c3... (62 %)
+Writing at 0x0009fef4... (65 %)
+Writing at 0x000a5b3d... (68 %)
+Writing at 0x000ab8e8... (71 %)
+Writing at 0x000b108f... (74 %)
+Writing at 0x000b6e46... (77 %)
+Writing at 0x000bce02... (80 %)
+Writing at 0x000c2b1f... (82 %)
+Writing at 0x000c84b7... (85 %)
+Writing at 0x000d263b... (88 %)
+Writing at 0x000d8af1... (91 %)
+Writing at 0x000deb47... (94 %)
+Writing at 0x000e4a68... (97 %)
+Writing at 0x000e9ed0... (100 %)
+Wrote 896864 bytes (559550 compressed) at 0x00010000 in 12.8 seconds (effective 562.6 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.0 seconds (effective 878.3 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

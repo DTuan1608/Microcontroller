@@ -1,0 +1,9 @@
+CMake Error at D:/Espressif/frameworks/esp-idf-v5.4.1/tools/cmake/component.cmake:317 (message):
+  Include directory 'D:/face_detect/components/wpa_supplicant/src' is not a
+  directory.
+Call Stack (most recent call first):
+  D:/Espressif/frameworks/esp-idf-v5.4.1/tools/cmake/component.cmake:493 (__component_add_include_dirs)
+  components/esp_wifi/CMakeLists.txt:63 (idf_component_register)
+
+
+ninja: error: rebuilding 'build.ninja': subcommand failed
